@@ -7,6 +7,7 @@ generator client {
 
 datasource db {
   provider = "sqlite"
+  url      = env("DATABASE_URL")
 }
 
 model User {
@@ -14,7 +15,7 @@ model User {
   email     String   @unique
   password  String
   name      String
-  role      Role     @default(USER)
+  role      String   @default("USER")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -43,9 +44,4 @@ model Album {
   artist    Artist   @relation(fields: [artistId], references: [id], onDelete: Cascade)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-}
-
-enum Role {
-  USER
-  ADMIN
 }

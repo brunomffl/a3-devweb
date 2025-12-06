@@ -13,6 +13,12 @@ function validate(schema: z.ZodSchema, target: ValidationTarget) {
             switch (target){
                 case "body":
                     dataToValidate = req.body;
+                    // Se não foi enviado nenhum body, trata como objeto vazio
+                    if (dataToValidate === undefined || dataToValidate === null) {
+                        return res.status(400).json({
+                            message: "Credenciais não foram encontradas. Por favor, envie email e senha."
+                        });
+                    }
                     break;
                 case "params":
                     dataToValidate = req.params;

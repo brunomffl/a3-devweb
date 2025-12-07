@@ -38,3 +38,4 @@ export class ArtistController {
         return res.status(200).json(result);
     }
 }
+

@@ -20,7 +20,7 @@ export class ArtistService {
         const artist = await this.artistRepository.create(data);
         return {
             message: "Artista criado com sucesso",
-            artist
+            data: artist
         };
     }
 
@@ -28,8 +28,7 @@ export class ArtistService {
         const artists = await this.artistRepository.findAll();
         return {
             message: "Artistas listados com sucesso",
-            artists,
-            count: artists.length
+            data: artists
         };
     }
 
@@ -42,7 +41,7 @@ export class ArtistService {
 
         return {
             message: "Artista encontrado",
-            artist
+            data: artist
         };
     }
 
@@ -65,7 +64,7 @@ export class ArtistService {
         const updatedArtist = await this.artistRepository.update(id, data);
         return {
             message: "Artista atualizado com sucesso",
-            artist: updatedArtist
+            data: updatedArtist
         };
     }
 

@@ -11,9 +11,6 @@ export class ArtistRepository {
 
     async findAll() {
         return await prisma.artist.findMany({
-            include: {
-                albums: true
-            },
             orderBy: {
                 name: 'asc'
             }
@@ -22,10 +19,7 @@ export class ArtistRepository {
 
     async findById(id: string) {
         return await prisma.artist.findUnique({
-            where: { id },
-            include: {
-                albums: true
-            }
+            where: { id }
         });
     }
 

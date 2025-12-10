@@ -1,10 +1,9 @@
-// User Types
 export interface User {
   id: string;
   name: string;
   email: string;
   password?: string;
-  role: 'admin' | 'user';
+  role: 'ADMIN' | 'USER';
   createdAt: string;
   updatedAt: string;
 }
@@ -25,7 +24,6 @@ export interface RegisterRequest {
   password: string;
 }
 
-// Product Types
 export interface Product {
   id: string;
   name: string;
@@ -47,9 +45,8 @@ export interface CreateProductRequest {
   image?: string;
 }
 
-export interface UpdateProductRequest extends Partial<CreateProductRequest> {}
+export type UpdateProductRequest = Partial<CreateProductRequest>;
 
-// Order Types
 export interface Order {
   id: string;
   userId: string;
@@ -82,7 +79,6 @@ export interface UpdateOrderStatusRequest {
   status: Order['status'];
 }
 
-// Category Types
 export interface Category {
   id: string;
   name: string;
@@ -96,7 +92,6 @@ export interface CreateCategoryRequest {
   description?: string;
 }
 
-// Cart Types
 export interface CartItem {
   productId: string;
   quantity: number;
@@ -109,7 +104,6 @@ export interface Cart {
   totalPrice: number;
 }
 
-// Auth Context Types
 export interface AuthContextType {
   user: User | null;
   token: string | null;
@@ -120,7 +114,6 @@ export interface AuthContextType {
   logout: () => void;
 }
 
-// API Response Types
 export interface ApiResponse<T> {
   success: boolean;
   message: string;

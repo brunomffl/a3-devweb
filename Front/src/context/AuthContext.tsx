@@ -2,7 +2,8 @@ import React, { createContext, useState, useCallback, useEffect } from 'react';
 import type { AuthContextType, User } from '../types';
 import { authService } from '../services/authService';
 
-export const AuthContext = createContext<AuthContextType | undefined>(undefined);
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
+export default AuthContext
 
 interface AuthProviderProps {
   children: React.ReactNode;

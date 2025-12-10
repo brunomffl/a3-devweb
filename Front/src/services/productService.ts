@@ -8,7 +8,7 @@ import type {
 
 export const productService = {
   getAll: async (page = 1, pageSize = 10, search?: string): Promise<PaginatedResponse<Product>> => {
-    const params: Record<string, any> = { page, pageSize };
+      const params: Record<string, unknown> = { page, pageSize };
     if (search) params.search = search;
     const response = await api.get('/products', { params });
     return response.data.data;

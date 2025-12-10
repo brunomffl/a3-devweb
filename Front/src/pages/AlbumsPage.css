@@ -1,0 +1,70 @@
+.page-container {
+    width: 90%;
+    margin: 40px auto;
+}
+
+.page-container h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+}
+
+.btn-primary {
+    background: #6a5acd;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: #5545b0;
+}
+
+.list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    transition: 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #6a5acd;
+}
+
+.card p {
+    margin: 6px 0 10px;
+    color: #666;
+}
+
+.card button {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.card button:hover {
+    opacity: 0.8;
+}
